@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">My Application</string>
+
+    <string-array name="array_categorias">
+        <item>Alimentação</item>
+        <item>Jogos &amp; Lazer</item>
+        <item>Saúde &amp; Fitness</item>
+        <item>Educação</item>
+        <item>Transporte</item>
+        <item>Outros</item>
+    </string-array>
+</resources>
