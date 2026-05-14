@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Configurar Limites"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="24dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Limite Mensal Total (R$)"
+        android:textStyle="bold"/>
+    <EditText
+        android:id="@+id/edit_limite_total"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:hint="Ex: 2000.00"
+        android:layout_marginBottom="24dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Limite por Categoria (R$)"
+        android:textStyle="bold"/>
+    <Spinner
+        android:id="@+id/spinner_limite_categoria"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/array_categorias"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"/>
+    <EditText
+        android:id="@+id/edit_limite_categoria"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:hint="Ex: 500.00"
+        android:layout_marginBottom="32dp"/>
+
+    <Button
+        android:id="@+id/btn_salvar_configuracoes"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Guardar Limites"
+        android:textSize="18sp"/>
+
+</LinearLayout>
