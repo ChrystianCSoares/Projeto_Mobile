@@ -19,6 +19,9 @@ public interface GastoDAO {
     @Query("SELECT SUM(valor) FROM gastos_table")
     Double somarTotal();
 
+    @Query("SELECT SUM(valor) FROM gastos_table WHERE categoria = :cat")
+    Double somarPorUmaCategoria(String cat);
+
     @Delete
     void deletar(Gasto gasto);
 
@@ -29,4 +32,6 @@ public interface GastoDAO {
 
     @Query("SELECT categoria, SUM(valor) as total FROM gastos_table GROUP BY categoria")
     List<CategoriaSoma> somarPorCategoria();
+    @Query("SELECT SUM(valor) FROM gastos_table WHERE dataTimestamp BETWEEN :inicio AND :fim")
+    Double somarNoPeriodo(long inicio, long fim);
 }

@@ -1,18 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    android:background="#FAFAFA">
+    android:background="#F5F5F5">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Meus Gastos Registrados"
+        android:text="Resumo Financeiro"
         android:textSize="22sp"
         android:textStyle="bold"
-        android:layout_marginBottom="8dp"/>
+        android:layout_marginBottom="12dp"/>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_comparativo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="4dp"
+        android:layout_marginBottom="16dp"
+        app:cardBackgroundColor="@color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/txt_titulo_comparativo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Em relação ao mês passado:"
+                android:textSize="14sp"
+                android:textColor="#757575"/>
+
+            <TextView
+                android:id="@+id/txt_valor_comparativo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Calculando..."
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginTop="4dp"/>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
 
     <TextView
         android:id="@+id/txt_total_gastos"
@@ -20,16 +55,15 @@
         android:layout_height="wrap_content"
         android:text="Total: R$ 0.00"
         android:textSize="20sp"
-        android:textColor="#D32F2F"
         android:textStyle="bold"
-        android:layout_marginBottom="16dp"
         android:padding="12dp"
-        android:background="#FFEBEE" />
+        android:background="@drawable/bg_total_rounded"
+        android:layout_marginBottom="16dp" />
 
     <com.github.mikephil.charting.charts.PieChart
         android:id="@+id/grafico_pizza"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
+        android:layout_height="200dp"
         android:layout_marginBottom="16dp" />
 
     <androidx.recyclerview.widget.RecyclerView
